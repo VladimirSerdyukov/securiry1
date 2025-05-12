@@ -1,4 +1,4 @@
-package ru.security.security.allClass;
+package ru.security.security.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

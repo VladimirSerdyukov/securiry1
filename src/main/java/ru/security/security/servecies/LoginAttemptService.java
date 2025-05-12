@@ -1,7 +1,8 @@
-package ru.security.security.allClass;
+package ru.security.security.servecies;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.security.security.repositories.UserRepository;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -10,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @AllArgsConstructor
 public class LoginAttemptService {
     private final UserRepository userRepository;
-    final Map<String, Integer> failedAttempts = new ConcurrentHashMap<>();
+    private final Map<String, Integer> failedAttempts = new ConcurrentHashMap<>();
     static final int MAX_ATTEMPTS = 5;
 
     public void attemptLogin(String username){
@@ -39,5 +40,13 @@ public class LoginAttemptService {
             userRepository.save(user);
             clearAttempts(username);
         });
+    }
+
+    public Map<String, Integer> getFailedAttempts() {
+        return failedAttempts;
+    }
+
+    static public int getMaxAttempts(){
+        return MAX_ATTEMPTS;
     }
 }

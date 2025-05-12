@@ -1,4 +1,4 @@
-package ru.security.security.allClass;
+package ru.security.security.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;

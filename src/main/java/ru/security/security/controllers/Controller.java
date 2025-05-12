@@ -1,4 +1,4 @@
-package ru.security.security.allClass;
+package ru.security.security.controllers;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;

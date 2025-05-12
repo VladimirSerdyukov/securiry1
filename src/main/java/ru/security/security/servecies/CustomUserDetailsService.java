@@ -1,4 +1,4 @@
-package ru.security.security.allClass;
+package ru.security.security.servecies;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.LockedException;
@@ -8,6 +8,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+import ru.security.security.repositories.UserRepository;
+import ru.security.security.entity.User;
 
 import java.util.Collection;
 import java.util.HashSet;

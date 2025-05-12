@@ -1,4 +1,4 @@
-package ru.security.security.allClass;
+package ru.security.security.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

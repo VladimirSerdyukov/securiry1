@@ -1,8 +1,12 @@
-package ru.security.security.allClass;
+package ru.security.security;
 
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import ru.security.security.entity.User;
+import ru.security.security.repositories.UserRepository;
+
+import java.security.KeyStore;
 
 @Component
 @AllArgsConstructor
@@ -32,5 +36,10 @@ public class InitDatabase {
         moderator.setAccountNonLocked(true);
         moderator.setRole(User.Role.ROLE_MODERATOR);
         userRepository.save(moderator);
+
+        System.out.println("Keystore: " +
+                (System.getProperty("javax.net.ssl.keyStore") != null ? System.getProperty("javax.net.ssl.keyStore") : KeyStore.getDefaultType() + " находится в " + System.getProperty("java.home") + "/lib/security/cacerts"));
+        System.out.println("Пароль: " +
+                (System.getProperty("javax.net.ssl.keyStorePassword") != null ? System.getProperty("javax.net.ssl.keyStorePassword") : "Changeit (по умолчанию)"));
     }
 }
