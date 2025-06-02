@@ -9,15 +9,15 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-@Component
-public class HttpsRedirectFilter extends OncePerRequestFilter {
-    @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        if(!"https".equals(request.getScheme())){
-            String redirectUrl = "https://" + request.getServerName() + ":" + 443 + request.getRequestURI();
-            response.sendRedirect(redirectUrl);
-            return;
-        }
-        filterChain.doFilter(request, response);
-    }
-}
+//@Component
+//public class HttpsRedirectFilter extends OncePerRequestFilter {
+//    @Override
+//    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+//        if(!"https".equals(request.getScheme())){
+//            String redirectUrl = "https://" + request.getServerName() + ":" + 8443 + request.getRequestURI();
+//            response.sendRedirect(redirectUrl);
+//            return;
+//        }
+//        filterChain.doFilter(request, response);
+//    }
+//}
